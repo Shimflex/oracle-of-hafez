@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle of Hafez — Ancient Wisdom for Modern Questions</title>
+    <meta name="description" content="Ask a question, receive timeless wisdom from Hafez. A 700-year-old Persian poetry oracle, now on your phone.">
+    <meta property="og:title" content="Oracle of Hafez">
+    <meta property="og:description" content="Ancient Persian poetry oracle — ask a question, receive timeless wisdom from Hafez.">
+    <meta property="og:type" content="website">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lora:wght@400;500&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Lora', Georgia, serif;
+            background: #0a0a1a;
+            color: #e8e0d0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(1px 1px at 10% 20%, rgba(255,215,140,0.4), transparent),
+                radial-gradient(1px 1px at 30% 60%, rgba(255,215,140,0.3), transparent),
+                radial-gradient(1px 1px at 50% 10%, rgba(255,215,140,0.5), transparent),
+                radial-gradient(1px 1px at 70% 40%, rgba(255,215,140,0.3), transparent),
+                radial-gradient(1px 1px at 90% 80%, rgba(255,215,140,0.4), transparent),
+                radial-gradient(1px 1px at 15% 90%, rgba(255,215,140,0.2), transparent),
+                radial-gradient(1px 1px at 45% 75%, rgba(255,215,140,0.3), transparent),
+                radial-gradient(1px 1px at 80% 15%, rgba(255,215,140,0.4), transparent),
+                radial-gradient(1.5px 1.5px at 25% 45%, rgba(255,215,140,0.6), transparent),
+                radial-gradient(1.5px 1.5px at 65% 70%, rgba(255,215,140,0.5), transparent);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+            text-align: center;
+        }
+
+        .orb {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 40px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #ffe08a, #c9952b 50%, #8a6914 100%);
+            box-shadow:
+                0 0 40px rgba(201,149,43,0.4),
+                0 0 80px rgba(201,149,43,0.2),
+                inset 0 -4px 12px rgba(0,0,0,0.3);
+            animation: glow 4s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 40px rgba(201,149,43,0.4), 0 0 80px rgba(201,149,43,0.2); }
+            50% { box-shadow: 0 0 60px rgba(201,149,43,0.6), 0 0 120px rgba(201,149,43,0.3); }
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #f0e0c0;
+            margin-bottom: 8px;
+            letter-spacing: 0.02em;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #b0a080;
+            font-style: italic;
+            margin-bottom: 48px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #c9952b, transparent);
+            margin: 0 auto 48px;
+        }
+
+        .description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c8c0b0;
+            margin-bottom: 20px;
+        }
+
+        .persian-sample {
+            font-size: 1.4rem;
+            direction: rtl;
+            color: #d4b870;
+            margin: 40px 0;
+            line-height: 2;
+            font-family: serif;
+        }
+
+        .features {
+            text-align: left;
+            margin: 48px 0;
+            padding: 0 20px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .feature-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #b8b0a0;
+        }
+
+        .feature-text strong {
+            color: #e0d0b0;
+        }
+
+        .cta-section {
+            margin-top: 56px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #c9952b, #a07820);
+            color: #1a1a2e;
+            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 24px rgba(201,149,43,0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(201,149,43,0.4);
+        }
+
+        .download-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .store-note {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: #706858;
+        }
+
+        .footer {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(201,149,43,0.15);
+            font-size: 0.85rem;
+            color: #605848;
+        }
+
+        .footer a {
+            color: #907840;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.2rem; }
+            .container { padding: 40px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <div class="orb"></div>
+        <h1>Oracle of Hafez</h1>
+        <p class="tagline">Ancient wisdom for modern questions</p>
+        <div class="divider"></div>
+
+        <p class="description">
+            For over 700 years, people have turned to the poetry of Hafez Shirazi
+            for guidance, comfort, and insight. Hold a question in your heart,
+            tap the golden orb, and receive a ghazal chosen for you.
+        </p>
+
+        <div class="persian-sample">
+            بیا که قصر امل سخت سست بنیادست<br>
+            بیار باده که بنیاد عمر بر بادست
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">✦</span>
+                <p class="feature-text"><strong>50 curated ghazals</strong> with original Persian calligraphy, English translations, and modern interpretations</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">✦</span>
+                <p class="feature-text"><strong>A ritual, not an app</strong> — midnight skies, golden light, and cinematic animations for every reading</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">✦</span>
+                <p class="feature-text"><strong>No accounts, no tracking</strong> — just you and the oracle</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">✦</span>
+                <p class="feature-text"><strong>Share your readings</strong> with friends and let Hafez speak to them too</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <a href="https://play.google.com/store/apps/details?id=com.oracleofhafez.app" class="download-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 0 1 0 1.38l-2.302 2.302L15.396 12l2.302-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                Get it on Google Play
+            </a>
+            <p class="store-note">Free to start · Android</p>
+        </div>
+
+        <div class="footer">
+            <p><a href="https://shimflex.github.io/oracle-privacy/">Privacy Policy</a></p>
+            <p style="margin-top: 8px;">Made with love for the poetry of Hafez</p>
+        </div>
+    </div>
+</body>
+</html>
