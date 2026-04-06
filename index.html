@@ -187,6 +187,47 @@
             text-decoration: underline;
         }
 
+        .share-section {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .qr-code {
+            display: inline-block;
+            padding: 14px;
+            background: #fff;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 24px rgba(201,149,43,0.15);
+        }
+
+        .qr-code img {
+            display: block;
+            border-radius: 6px;
+        }
+
+        .short-link {
+            display: inline-block;
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.05rem;
+            color: #d4b870;
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            padding: 10px 24px;
+            border: 1px solid rgba(201,149,43,0.25);
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+            margin-top: 4px;
+        }
+
+        .short-link:hover {
+            background: rgba(201,149,43,0.1);
+            color: #ffe08a;
+            border-color: rgba(201,149,43,0.5);
+        }
+
         @media (max-width: 480px) {
             h1 { font-size: 2.2rem; }
             .container { padding: 40px 20px 60px; }
@@ -237,6 +278,17 @@
                 Get it on Google Play
             </a>
             <p class="store-note">Free to start · Android</p>
+        </div>
+
+        <div class="share-section">
+            <div class="divider" style="margin-top: 56px;"></div>
+            <p style="color: #b0a080; font-size: 0.95rem; margin-bottom: 24px;">Share the oracle with a friend</p>
+            <div class="qr-code">
+                <img src="qr-code.png" alt="QR Code — Oracle of Hafez" width="180" height="180">
+            </div>
+            <div>
+                <a href="https://bit.ly/oracle-hafez" class="short-link">bit.ly/oracle-hafez</a>
+            </div>
         </div>
 
         <div class="footer">
